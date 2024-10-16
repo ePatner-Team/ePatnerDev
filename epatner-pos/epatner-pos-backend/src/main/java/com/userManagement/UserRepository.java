@@ -1,9 +1,13 @@
 package com.userManagement;
 
-//import com.epatner.pos.userManagement.model.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.Optional;
-public class UserRepository {
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
+    
+    // Method to find a user by their email
+    Optional<UserEntity> findByEmail(String email);
 }
