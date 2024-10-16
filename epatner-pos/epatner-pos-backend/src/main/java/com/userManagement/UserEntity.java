@@ -5,12 +5,10 @@ import lombok.Data;
 
 // Lombok annotation to automatically generate getters, setters, equals, hashCode, and toString methods
 @Data
-// Marks this class as a JPA entity
 @Entity
-// Specifies the table name in the database
 @Table(name = "users")
 public class UserEntity {
-    // Marks this field as the primary key
+
     @Id
     // Configures the way of increment of the specified column (field)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +18,6 @@ public class UserEntity {
     @Column(name = "business_name", unique = true, nullable = false) // Corrected spelling
     private String businessName; // Corrected spelling
 
-    // Specifies that the password should not be null
     @Column(nullable = false)
     private String password;
 
@@ -28,11 +25,9 @@ public class UserEntity {
     @Column(unique = true, nullable = false)
     private String email;
 
-    // Specifies the column name in the database
     @Column(name = "first_name")
     private String firstName;
 
-    // Specifies the column name in the database
     @Column(name = "last_name")
     private String lastName;
 
