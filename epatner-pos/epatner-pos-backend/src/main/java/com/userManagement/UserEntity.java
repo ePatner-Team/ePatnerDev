@@ -38,10 +38,9 @@ public class UserEntity {
     // Specifies that the role should be stored as a string in the database
     @Enumerated(EnumType.STRING)
     private Role role;
-}
 
-// Enum to represent user roles
-enum Role {
-    ADMIN, CASHIER, MANAGER
+    // Enum to represent user roles
+    public enum Role {
+        ADMIN, CASHIER, MANAGER
+    }
 }
-
