@@ -1,8 +1,8 @@
 package com.accountingAndFinance;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-import java.math.BigDecimal;
 
 public class AccountingModel {
 
@@ -27,7 +27,7 @@ public class AccountingModel {
         private Long id;
         private String name;
         private AccountType type;
-        private BigDecimal balance;
+
 
         public enum AccountType {
             ASSET, LIABILITY, INCOME, EXPENSE, EQUITY
