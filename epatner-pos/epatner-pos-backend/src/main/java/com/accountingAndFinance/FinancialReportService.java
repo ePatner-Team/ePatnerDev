@@ -2,7 +2,7 @@
 package com.accountingAndFinance;
 
 import com.accountingAndFinance.AccountingModel.*;
-import com.accountingAndFinance.AccountingRepository;
+// import com.accountingAndFinance.AccountingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +24,7 @@ public class FinancialReportService {
     @Autowired
     private AccountingRepository.CashFlowStatementRepository cashFlowStatementRepository;
 
+    @SuppressWarnings("unused")
     public IncomeStatement generateIncomeStatement(Date startDate, Date endDate) {
         List<Payment> payments = paymentRepository.findByDateBetween(startDate, endDate);
         // Process payments to generate income statement
