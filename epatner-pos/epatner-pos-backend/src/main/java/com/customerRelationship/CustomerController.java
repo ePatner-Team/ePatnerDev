@@ -5,6 +5,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.customerRelationship.entity.Discount;
+import com.customerRelationship.entity.LoyaltyProgram;
+import com.customerRelationship.entity.Reward;
+import com.customerRelationship.entity.Customer;
+
+import com.customerRelationship.service.DiscountService;
+import com.customerRelationship.service.RewardService;
+import com.customerRelationship.service.CustomerService;
+import com.customerRelationship.service.LoyaltyProgramService;
+
 import java.util.List;
 
 @RestController
@@ -45,52 +55,6 @@ public class CustomerController {
     @PutMapping("/customers/{id}")
     public ResponseEntity<Customer> updateCustomer(@PathVariable Long id, @RequestBody Customer customer) {
         return ResponseEntity.ok(customerService.updateCustomer(id, customer));
-    }
-
-    @DeleteMapping("/customers/{id}")
-    public ResponseEntity<Void> deleteCustomer(@PathVariable Long id) {
-        customerService.deleteCustomer(id);
-        return ResponseEntity.noContent().build();
-    }
-
-    // Loyalty Program endpoints
-    @GetMapping("/loyalty-programs")
-    public ResponseEntity<List<LoyaltyProgram>> getAllLoyaltyPrograms() {
-        return ResponseEntity.ok(loyaltyProgramService.getAllLoyaltyPrograms());
-    }
-
-    @PostMapping("/loyalty-programs")
-    public ResponseEntity<LoyaltyProgram> createLoyaltyProgram(@RequestBody LoyaltyProgram program) {
-        LoyaltyProgram createdProgram = loyaltyProgramService.createLoyaltyProgram(program);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdProgram);
-    }
-
-    @PutMapping("/loyalty-programs/{id}")
-    public ResponseEntity<LoyaltyProgram> updateLoyaltyProgram(@PathVariable Long id, @RequestBody LoyaltyProgram program) {
-        return ResponseEntity.ok(loyaltyProgramService.updateLoyaltyProgram(id, program));
-    }
-
-    @DeleteMapping("/loyalty-programs/{id}")
-    public ResponseEntity<Void> deleteLoyaltyProgram(@PathVariable Long id) {
-        loyaltyProgramService.deleteLoyaltyProgram(id);
-        return ResponseEntity.noContent().build();
-    }
-
-    // Discount endpoints
-    @GetMapping("/discounts")
-    public ResponseEntity<List<Discount>> getAllDiscounts() {
-        return ResponseEntity.ok(discountService.getAllDiscounts());
-    }
-
-    @PostMapping("/discounts")
-    public ResponseEntity<Discount> createDiscount(@RequestBody Discount discount) {
-        Discount createdDiscount = discountService.createDiscount(discount);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdDiscount);
-    }
-
-    @PutMapping("/discounts/{id}")
-    public ResponseEntity<Discount> updateDiscount(@PathVariable Long id, @RequestBody Discount discount) {
-        return ResponseEntity.ok(discountService.updateDiscount(id, discount));
     }
 
     @DeleteMapping("/customers/{id}")
