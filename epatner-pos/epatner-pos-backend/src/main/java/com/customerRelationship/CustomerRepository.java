@@ -1,6 +1,6 @@
 package com.customerRelationship;
 
-import com.customerRelationship.entity.CustomerEntity;
+import com.customerRelationship.CustomerEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
