@@ -1,11 +1,11 @@
 package com.customerRelationship;
 
-import com.epatner.pos.customerRelationship.entity.CustomerEntity;
-import com.epatner.pos.customerRelationship.entity.Discount;
-import com.epatner.pos.customerRelationship.entity.LoyaltyProgram;
-import com.epatner.pos.customerRelationship.entity.Reward;
-import com.epatner.pos.customerRelationship.repository.CustomerRepository;
-import com.epatner.pos.customerRelationship.exception.CustomerNotFoundException;
+import com.customerRelationship.CustomerEntity;
+import com.customerRelationship.Discount;
+import com.customerRelationship.LoyaltyProgram;
+import com.customerRelationship.Reward;
+import com.customerRelationship.CustomerRepository;
+// import com.customerRelationship.exception.CustomerNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -93,7 +93,7 @@ public class CustomerService {
         customerRepository.save(customer);
     }
 
-    @Transactional
+@Transactional
     public void removeDiscount(Long customerId, Discount discount) {
         CustomerEntity customer = getCustomerById(customerId);
         customer
