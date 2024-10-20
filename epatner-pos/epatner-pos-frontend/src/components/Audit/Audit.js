@@ -12,7 +12,7 @@ import {
   fetchAuditDiscrepancies,
   resolveAuditDiscrepancy,
   exportAuditReport
-} from '../../actions/auditActions';
+} from '../redux/actions/auditActions';
 import { 
   Table, 
   Button, 
